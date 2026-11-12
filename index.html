@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوتي | دعوة زفاف إلكترونية</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Tahoma,Arial,sans-serif;
+ background:#f7f1e8;
+ color:#493b32;
+}
+header{
+ background:#fffaf2;
+ padding:22px;
+ text-align:center;
+ border-bottom:1px solid #e5d5bd;
+}
+header h1{color:#a47c45;margin:0}
+main{max-width:650px;margin:30px auto;padding:15px}
+.card{
+ background:white;
+ padding:25px;
+ border-radius:18px;
+ box-shadow:0 5px 25px #00000010;
+}
+h2{text-align:center;color:#a47c45}
+label{display:block;margin-top:15px}
+input,textarea{
+ width:100%;padding:13px;margin-top:7px;
+ border:1px solid #dfd1bf;border-radius:9px;
+ font-size:16px;
+}
+button{
+ width:100%;padding:14px;margin-top:20px;
+ background:#a47c45;color:white;border:0;
+ border-radius:10px;font-size:17px;
+ cursor:pointer;
+}
+.invite{
+ display:none;text-align:center;
+ margin-top:25px;padding:25px;
+ border:2px solid #c4a36b;border-radius:15px;
+ background:#fffaf2;
+}
+.invite h2{font-size:30px}
+.small{color:#907a62;line-height:2}
+</style>
+</head>
+<body>
+<header>
+<h1>دعوتي 💍</h1>
+<p>اصنع دعوة فرحك بكل أناقة</p>
+</header>
+
+<main>
+<div class="card">
+<h2>صمم دعوتك الآن</h2>
+
+<label>اسم العريس</label>
+<input id="groom" placeholder="اسم العريس">
+
+<label>اسم العروس</label>
+<input id="bride" placeholder="اسم العروس">
+
+<label>تاريخ المناسبة</label>
+<input id="date" type="date">
+
+<label>مكان الحفل</label>
+<input id="place" placeholder="اسم القاعة أو المكان">
+
+<label>رسالة الدعوة</label>
+<textarea id="message" rows="3"
+placeholder="يشرفنا حضوركم ومشاركتنا فرحتنا"></textarea>
+
+<button onclick="makeInvite()">إنشاء الدعوة</button>
+
+<div class="invite" id="invite">
+<p>بسم الله الرحمن الرحيم</p>
+<h2>دعوة زفاف</h2>
+<p>بكل الحب والفرح ندعوكم لمشاركتنا أجمل لحظات العمر</p>
+<h2 id="names"></h2>
+<p id="eventDate"></p>
+<p id="eventPlace"></p>
+<p class="small" id="eventMessage"></p>
+<p>حضوركم يزيد فرحتنا ❤️</p>
+<button onclick="shareInvite()">مشاركة عبر واتساب</button>
+</div>
+</div>
+</main>
+
+<script>
+function makeInvite(){
+ const groom=document.getElementById("groom").value.trim();
+ const bride=document.getElementById("bride").value.trim();
+ if(!groom || !bride){
+  alert("اكتب اسم العريس والعروس أولاً");
+  return;
+ }
+ document.getElementById("names").textContent=
+ groom+" ❤️ "+bride;
+ document.getElementById("eventDate").textContent=
+ document.getElementById("date").value;
+ document.getElementById("eventPlace").textContent=
+ document.getElementById("place").value;
+ document.getElementById("eventMessage").textContent=
+ document.getElementById("message").value;
+ document.getElementById("invite").style.display="block";
+}
+function shareInvite(){
+ const text=document.getElementById("invite").innerText;
+ window.open("https://wa.me/?text="+encodeURIComponent(text));
+}
+</script>
+</body>
+</html>

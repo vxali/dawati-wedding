@@ -4,115 +4,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دعوتي | دعوة زفاف إلكترونية</title>
+<title>دعوتي | أجمل دعوة لأجمل مناسبة</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;
- font-family:Tahoma,Arial,sans-serif;
- background:#f7f1e8;
- color:#493b32;
+ margin:0;background:#f5eee5;color:#574638;
+ font-family:'Cairo',sans-serif;
 }
 header{
- background:#fffaf2;
- padding:22px;
- text-align:center;
- border-bottom:1px solid #e5d5bd;
+ text-align:center;padding:30px 15px;
+ background:#fffaf3;border-bottom:1px solid #dfc9a5;
 }
-header h1{color:#a47c45;margin:0}
-main{max-width:650px;margin:30px auto;padding:15px}
+.logo{font-family:'Amiri',serif;font-size:38px;color:#a77b39}
+header p{margin:0;color:#927b60}
+.hero{
+ min-height:330px;display:flex;align-items:center;
+ justify-content:center;text-align:center;
+ padding:35px 15px;
+ background:linear-gradient(#3c261b66,#3c261b66),
+ url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1200');
+ background-size:cover;background-position:center;
+ color:white;
+}
+.hero h2{font:42px 'Amiri',serif;margin:0}
+.hero p{font-size:15px}
+main{max-width:720px;margin:35px auto;padding:15px}
 .card{
- background:white;
- padding:25px;
- border-radius:18px;
- box-shadow:0 5px 25px #00000010;
+ background:#fffaf3;padding:25px;border-radius:20px;
+ box-shadow:0 8px 30px #6c4c2418;
+ border:1px solid #e4d0ad;
 }
-h2{text-align:center;color:#a47c45}
-label{display:block;margin-top:15px}
+h2.section{text-align:center;color:#a77b39;font-family:'Amiri',serif;font-size:30px}
+label{display:block;margin-top:15px;font-weight:600}
 input,textarea{
  width:100%;padding:13px;margin-top:7px;
- border:1px solid #dfd1bf;border-radius:9px;
- font-size:16px;
+ border:1px solid #ddc9a8;border-radius:10px;
+ background:#fffdf9;font:15px 'Cairo',sans-serif;
 }
 button{
- width:100%;padding:14px;margin-top:20px;
- background:#a47c45;color:white;border:0;
- border-radius:10px;font-size:17px;
+ border:0;border-radius:10px;padding:14px 20px;
+ background:#a77b39;color:white;font: bold 16px 'Cairo';
  cursor:pointer;
 }
-.invite{
- display:none;text-align:center;
- margin-top:25px;padding:25px;
- border:2px solid #c4a36b;border-radius:15px;
- background:#fffaf2;
+button:hover{background:#805b2c}
+.mainbtn{width:100%;margin-top:22px}
+.preview{
+ display:none;margin-top:30px;padding:12px;
+ background:#f8f0e4;border:1px solid #c6a66e;
+ border-radius:15px;
 }
-.invite h2{font-size:30px}
-.small{color:#907a62;line-height:2}
+.invitation{
+ position:relative;overflow:hidden;text-align:center;
+ padding:35px 20px;background:#fffdf8;
+ border:3px double #b38b4b;border-radius:12px;
+}
+.invitation:before,.invitation:after{
+ content:"❀";position:absolute;color:#c49a5a;
+ font-size:38px;opacity:.65;
+}
+.invitation:before{top:8px;right:12px}
+.invitation:after{bottom:8px;left:12px}
+.invitation .flower{font-size:30px;color:#b58a4b}
+.invitation h2{
+ font:38px 'Amiri',serif;color:#a77b39;margin:12px 0;
+}
+.invitation .names{
+ font:34px 'Amiri',serif;color:#715137;
+ margin:18px 0;
+}
+.invitation p{line-height:2}
+.photo{
+ width:100%;height:150px;object-fit:cover;
+ border-radius:9px;margin:10px 0;
+}
+.share{width:100%;margin-top:15px;background:#287b50}
+footer{text-align:center;padding:25px;color:#917b62;font-size:13px}
 </style>
 </head>
 <body>
+
 <header>
-<h1>دعوتي 💍</h1>
-<p>اصنع دعوة فرحك بكل أناقة</p>
+ <div class="logo">دعوتي ❀</div>
+ <p>دعوتك تحكي أجمل حكاية</p>
 </header>
+
+<section class="hero">
+ <div>
+  <h2>لحظات العمر تستحق دعوة مميزة</h2>
+  <p>اصنع دعوتك الإلكترونية بكل حب وأناقة</p>
+ </div>
+</section>
 
 <main>
 <div class="card">
-<h2>صمم دعوتك الآن</h2>
+<h2 class="section">صمم بطاقة زفافك</h2>
 
 <label>اسم العريس</label>
-<input id="groom" placeholder="اسم العريس">
+<input id="groom" placeholder="اكتب اسم العريس">
 
 <label>اسم العروس</label>
-<input id="bride" placeholder="اسم العروس">
+<input id="bride" placeholder="اكتب اسم العروس">
 
-<label>تاريخ المناسبة</label>
+<label>تاريخ الزفاف</label>
 <input id="date" type="date">
+
+<label>وقت الحفل</label>
+<input id="time" type="time">
 
 <label>مكان الحفل</label>
 <input id="place" placeholder="اسم القاعة أو المكان">
 
 <label>رسالة الدعوة</label>
-<textarea id="message" rows="3"
-placeholder="يشرفنا حضوركم ومشاركتنا فرحتنا"></textarea>
+<textarea id="message" rows="3">بكل الحب والفرح نتشرف بدعوتكم لمشاركتنا أجمل أيام العمر</textarea>
 
-<button onclick="makeInvite()">إنشاء الدعوة</button>
+<button class="mainbtn" onclick="makeInvite()">✨ معاينة دعوتي</button>
 
-<div class="invite" id="invite">
-<p>بسم الله الرحمن الرحيم</p>
-<h2>دعوة زفاف</h2>
-<p>بكل الحب والفرح ندعوكم لمشاركتنا أجمل لحظات العمر</p>
-<h2 id="names"></h2>
-<p id="eventDate"></p>
-<p id="eventPlace"></p>
-<p class="small" id="eventMessage"></p>
-<p>حضوركم يزيد فرحتنا ❤️</p>
-<button onclick="shareInvite()">مشاركة عبر واتساب</button>
+<div class="preview" id="preview">
+ <div class="invitation" id="invitation">
+  <div class="flower">❀ ✦ ❀</div>
+  <p>بسم الله الرحمن الرحيم</p>
+  <p>بكل الحب والسرور ندعوكم لحضور حفل زفاف</p>
+  <h2>دعوة زفاف</h2>
+  <div class="names" id="names"></div>
+  <img class="photo" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800" alt="أجواء زفاف">
+  <p id="eventDate"></p>
+  <p id="eventTime"></p>
+  <p id="eventPlace"></p>
+  <p id="eventMessage"></p>
+  <div class="flower">❀ ✦ ❀</div>
+  <p>حضوركم يسعدنا ويكمل فرحتنا ❤️</p>
+ </div>
+ <button class="share" onclick="shareInvite()">مشاركة الدعوة عبر واتساب</button>
 </div>
 </div>
 </main>
 
+<footer>دعوتي © 2026 - كل مناسبة لها حكاية جميلة</footer>
+
 <script>
 function makeInvite(){
- const groom=document.getElementById("groom").value.trim();
- const bride=document.getElementById("bride").value.trim();
- if(!groom || !bride){
-  alert("اكتب اسم العريس والعروس أولاً");
+ const val=id=>document.getElementById(id).value.trim();
+ if(!val('groom')||!val('bride')){
+  alert('من فضلك اكتب اسم العريس والعروس');
   return;
  }
- document.getElementById("names").textContent=
- groom+" ❤️ "+bride;
- document.getElementById("eventDate").textContent=
- document.getElementById("date").value;
- document.getElementById("eventPlace").textContent=
- document.getElementById("place").value;
- document.getElementById("eventMessage").textContent=
- document.getElementById("message").value;
- document.getElementById("invite").style.display="block";
+ document.getElementById('names').textContent=
+ val('groom')+' ♥ '+val('bride');
+ document.getElementById('eventDate').textContent=
+ '📅 التاريخ: '+(val('date')||'سيتم تحديده');
+ document.getElementById('eventTime').textContent=
+ '🕒 الوقت: '+(val('time')||'سيتم تحديده');
+ document.getElementById('eventPlace').textContent=
+ '📍 المكان: '+(val('place')||'سيتم تحديده');
+ document.getElementById('eventMessage').textContent=val('message');
+ document.getElementById('preview').style.display='block';
+ document.getElementById('preview').scrollIntoView({behavior:'smooth'});
 }
 function shareInvite(){
- const text=document.getElementById("invite").innerText;
- window.open("https://wa.me/?text="+encodeURIComponent(text));
+ const text=document.getElementById('invitation').innerText;
+ window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
 }
 </script>
 </body>
